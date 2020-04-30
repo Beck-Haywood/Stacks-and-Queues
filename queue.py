@@ -27,7 +27,7 @@ class LinkedQueue(object):
 
     def enqueue(self, item):
         """Insert the given item at the back of this queue.
-        Running time: O(???) – Why? [TODO]"""
+        Running time: O(1) everything runs in constant time"""
         return self.list.append(item)
 
     def front(self):
@@ -39,7 +39,7 @@ class LinkedQueue(object):
     def dequeue(self):
         """Remove and return the item at the front of this queue,
         or raise ValueError if this queue is empty.
-        Running time: O(???) – Why? [TODO]"""
+        Running time: O(1) because it removes item at head, so no iterations"""
         item_to_remove = self.front()
         self.list.delete(item_to_remove)
         return item_to_remove
@@ -70,7 +70,7 @@ class ArrayQueue(object):
 
     def enqueue(self, item):
         """Insert the given item at the back of this queue.
-        Running time: O(n) – Why? [TODO]"""
+        Running time: O(1) List append is constant time"""
         self.list.append(item)
 
     def front(self):
@@ -81,7 +81,7 @@ class ArrayQueue(object):
     def dequeue(self):
         """Remove and return the item at the front of this queue,
         or raise ValueError if this queue is empty.
-        Running time: O(???) – Why? [TODO]"""
+        Running time: O(n) – Pop will force every other element in the list to shift down one."""
         if self.is_empty():
             raise ValueError
         return self.list.pop(0)

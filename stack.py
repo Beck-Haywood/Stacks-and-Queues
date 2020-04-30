@@ -27,7 +27,7 @@ class LinkedStack(object):
 
     def push(self, item):
         """Insert the given item on the top of this stack.
-        Running time: O(1) – Because we have acess to tail [TODO]"""
+        Running time: O(1) – Because we have access to tail"""
         self.list.prepend(item)
 
     def peek(self):
@@ -38,7 +38,7 @@ class LinkedStack(object):
     def pop(self):
         """Remove and return the item on the top of this stack,
         or raise ValueError if this stack is empty.
-        Running time: O(1) – Because were removing at the beginning of the linked list [TODO]"""
+        Running time: O(1) – Because were removing at the beginning of the linked list"""
         item_to_remove = self.peek()
         self.list.delete(item_to_remove)
         return item_to_remove
@@ -84,7 +84,7 @@ class ArrayStack(object):
     def pop(self):
         """Remove and return the item on the top of this stack,
         or raise ValueError if this stack is empty.
-        Running time: O(n) – The pop function is O(n) because it moves every other item in the list up, so n being the length of the stack"""
+        Running time: O(1) because the last one is deleted the list can remain the same so it runs in constant time."""
         if self.is_empty():
             raise ValueError
         return self.list.pop(self.length() - 1)
